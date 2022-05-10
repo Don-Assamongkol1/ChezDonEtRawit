@@ -36,3 +36,124 @@
     transform: rotate(360deg);
   }
 }
+
+.food-grid {
+  margin: 20px auto 0 auto;
+  padding: 20px 0px;
+  width: 800px;
+  overflow: hidden;
+  border: 1px solid black;
+  position: relative;
+
+  justify-content: flex-end;
+}
+
+.food-grid::before {
+  content: '';
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  background-image: linear-gradient(
+    to left,
+    rgba(255, 255, 255, 0),
+    rgba(255, 255, 255, 1) 100%
+  );
+  width: 200px;
+  height: 100%;
+}
+
+.food-grid::after {
+  content: '';
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  right: 0;
+  pointer-events: none;
+  background-image: linear-gradient(
+    to right,
+    rgba(255, 255, 255, 0),
+    rgba(255, 255, 255, 1) 100%
+  );
+  width: 80px;
+  height: 100%;
+}
+
+.food-grid-row {
+  display: flex;
+  width: 100%;
+}
+
+.items {
+  display: flex;
+}
+
+.animate-right-one {
+  animation-name: rightToLeftOne;
+  animation-duration: 20s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+.animate-right-two {
+  animation-name: rightToLeftTwo;
+  animation-duration: 20s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+.animate-left-one {
+  animation-name: rightToLeftOne;
+  animation-duration: 20s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-direction: reverse;
+}
+
+.animate-left-two {
+  animation-name: rightToLeftTwo;
+  animation-duration: 20s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-direction: reverse;
+}
+
+.food-item-in-row {
+  margin: 0px 2px;
+  transition: all 0.3s;
+}
+
+.food-item-in-row:hover {
+  transform: scale(1.2);
+}
+
+.hide {
+  display: none;
+}
+
+.food-item-in-row:hover + .hide {
+  display: block;
+}
+
+@keyframes rightToLeftOne {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+@keyframes rightToLeftTwo {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+img {
+  height: 100px;
+}
