@@ -6,8 +6,8 @@ function App() {
     <div className="food-grid">
       <FoodDisplay direction="right" />
       <FoodDisplay direction="left" />
-      <FoodDisplay direction="right" />
-      <FoodDisplay direction="left" />
+      {/* <FoodDisplay direction="right" /> */}
+      {/* <FoodDisplay direction="left" /> */}
     </div>
   )
 }
